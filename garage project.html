@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <title>Automotive garage</title>
+        <style>
+            body {
+                font-family:Arial, Helvetica, sans-serif;
+                padding: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Automotive garage</h1>
+            <p>Cars autoparts and repairs</p>
+        </header>
+        <nav>
+            <a href="#Services">Services</a>
+            <a href="#Contacts">Contacts</a>
+        </nav>
+        <main>
+            <section id="Services">
+                <h2>We offer</h2>
+                <ul>
+                    <li>oil changes</li>
+                    <li>Brake repairs</li>
+                    <li>engine diagnostics</li>
+                    <li>bodyworks</li>
+                </ul>
+            </section>
+            <section id="Contacts">
+                <h2>Contact us</h2>
+                <form id="contactform"
+                onsubmit="return ValidateContactForm()">
+                <input type="text" id="name"
+                placeholder="Your name" />
+                <input type="email" id="email"
+                placeholder="Your email" />
+                <textarea id="message"
+                placeholder="Your message"></textarea>
+                <button type="submit">Send message</button>
+            </form>
+            </section>
+        </main>
+        <script>
+            function ValidateContactForm() {
+                const name = 
+                document.getElementById("name").value.trim();
+                const email = 
+                documet.getElementById("email").value.trim();
+                const message = 
+                document.getElementById("message").value.trim();
+                const errordiv = 
+                document.getElementById("formError");
+
+                if (!email || !name || !message) {
+                    errordiv.textContent = "All fields are required.";
+                    return false;
+                }
+                const emailPattern = 
+                if (!emailPattern(email)) {
+                    errordiv.textContent = "Please enter a valid email.";
+                    return false;
+
+                }
+                errorDiv.textContent = "";
+                alert("Message sent successfully!");
+                return true;
+            }
+
+        </script>
+        
+
+    </body>
+</html>
